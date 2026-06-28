@@ -1,0 +1,2187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      TITAN FITNESS | Premium Gym, Personal Training & Fitness Center
+    </title>
+    <meta
+      name="description"
+      content="TITAN FITNESS is a premium gym and personal training center for professionals, athletes, and fitness enthusiasts. Transform your body. Elevate your mind."
+    />
+    <meta name="theme-color" content="#050608" />
+    <meta
+      property="og:title"
+      content="TITAN FITNESS | Transform Your Body. Elevate Your Mind."
+    />
+    <meta
+      property="og:description"
+      content="Premium personal training, strength coaching, nutrition, recovery, and elite fitness classes."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <style>
+      :root {
+        --bg: #050608;
+        --bg-2: #0b0e12;
+        --panel: rgba(255, 255, 255, 0.075);
+        --panel-2: rgba(255, 255, 255, 0.105);
+        --text: #f5f7fb;
+        --muted: #a9b0bf;
+        --line: rgba(255, 255, 255, 0.14);
+        --accent: #20f3c3;
+        --accent-2: #a7ff3f;
+        --hot: #ff3f81;
+        --gold: #d7b46a;
+        --shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+        --radius: 8px;
+        --max: 1180px;
+        --nav-h: 76px;
+        --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at 15% 5%,
+            rgba(32, 243, 195, 0.18),
+            transparent 28rem
+          ),
+          radial-gradient(
+            circle at 88% 18%,
+            rgba(255, 63, 129, 0.13),
+            transparent 30rem
+          ),
+          linear-gradient(180deg, #040506 0%, #080b0f 45%, #050608 100%);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      section {
+        position: relative;
+        padding: 110px 20px;
+      }
+      .container {
+        width: min(100%, var(--max));
+        margin: auto;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      .eyebrow:before {
+        content: "";
+        width: 34px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.05;
+        margin: 0;
+        letter-spacing: 0;
+      }
+      h1 {
+        font-size: clamp(3rem, 8vw, 7.8rem);
+        max-width: 980px;
+      }
+      h2 {
+        font-size: clamp(2.2rem, 5vw, 4.6rem);
+        max-width: 830px;
+      }
+      h3 {
+        font-size: 1.35rem;
+      }
+      p {
+        color: var(--muted);
+        margin: 0;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 34px;
+        align-items: end;
+        margin-bottom: 44px;
+      }
+      .section-head p {
+        max-width: 470px;
+      }
+      .gradient-text {
+        background: linear-gradient(
+          120deg,
+          #fff 5%,
+          #dfe6ec 35%,
+          var(--accent) 58%,
+          var(--gold) 95%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .btn {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.07);
+        color: var(--text);
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        font-weight: 800;
+        transition:
+          transform 0.25s var(--ease),
+          border-color 0.25s,
+          background 0.25s,
+          box-shadow 0.25s;
+      }
+      .btn:hover,
+      .btn:focus-visible {
+        transform: translateY(-2px);
+        border-color: rgba(32, 243, 195, 0.75);
+        box-shadow: 0 14px 36px rgba(32, 243, 195, 0.16);
+      }
+      .btn.primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #04100e;
+        border: 0;
+      }
+      .btn.dark {
+        background: #090c10;
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+      .glass {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.045)
+        );
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #030405;
+        display: grid;
+        place-items: center;
+        transition:
+          opacity 0.45s ease,
+          visibility 0.45s ease;
+      }
+      .loader.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .loader-mark {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        position: relative;
+        display: grid;
+        place-items: center;
+        color: var(--accent);
+        font-weight: 950;
+        letter-spacing: 0.08em;
+      }
+      .loader-mark:before {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: inherit;
+        border: 2px solid transparent;
+        border-top-color: var(--accent);
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .nav {
+        position: fixed;
+        inset: 0 0 auto 0;
+        height: var(--nav-h);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        transition:
+          background 0.25s,
+          border-color 0.25s,
+          transform 0.25s;
+        border-bottom: 1px solid transparent;
+      }
+      .nav.scrolled {
+        background: rgba(5, 6, 8, 0.78);
+        backdrop-filter: blur(18px);
+        border-color: var(--line);
+      }
+      .nav-inner {
+        width: min(100% - 40px, var(--max));
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 950;
+        letter-spacing: 0.07em;
+      }
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 7px;
+        background: linear-gradient(135deg, var(--accent), #fff, var(--gold));
+        display: grid;
+        place-items: center;
+        color: #050608;
+        font-weight: 950;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .nav-links a {
+        padding: 10px 12px;
+        border-radius: 999px;
+        color: #cbd1dc;
+        font-size: 0.92rem;
+        font-weight: 750;
+        transition:
+          color 0.2s,
+          background 0.2s;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .hamburger {
+        display: none;
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        cursor: pointer;
+      }
+      .hamburger span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: currentColor;
+        margin: 4px auto;
+        transition: 0.25s;
+      }
+
+      .hero {
+        min-height: 100svh;
+        padding-top: calc(var(--nav-h) + 76px);
+        display: grid;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero:before {
+        content: "";
+        position: absolute;
+        inset: -20%;
+        background:
+          linear-gradient(
+            115deg,
+            transparent 0 42%,
+            rgba(32, 243, 195, 0.11) 43%,
+            transparent 46% 100%
+          ),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 0 1px,
+            transparent 1px 92px
+          );
+        transform: perspective(900px) rotateX(58deg) translateY(10%);
+        animation: gridflow 10s linear infinite;
+        opacity: 0.72;
+      }
+
+      .hero-orbit {
+        position: absolute;
+        right: -180px;
+        top: 105px;
+        width: 620px;
+        height: 620px;
+        border-radius: 50%;
+        border: 1px solid rgba(32, 243, 195, 0.18);
+        animation: float 7s ease-in-out infinite;
+      }
+      .hero-orbit:before,
+      .hero-orbit:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        inset: 15%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .hero-orbit:after {
+        inset: 32%;
+        background: radial-gradient(
+          circle,
+          rgba(32, 243, 195, 0.2),
+          transparent 60%
+        );
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .hero p {
+        max-width: 680px;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        margin: 22px 0 32px;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 52px;
+      }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        max-width: 780px;
+      }
+      .stat {
+        padding: 22px;
+      }
+      .stat strong {
+        font-size: clamp(1.9rem, 4vw, 3.2rem);
+        line-height: 1;
+        color: #fff;
+      }
+      .stat span {
+        display: block;
+        color: var(--muted);
+        font-weight: 700;
+        margin-top: 8px;
+      }
+      .typing {
+        display: inline-block;
+        border-right: 4px solid var(--accent);
+        animation: caret 0.9s step-end infinite;
+      }
+      @keyframes caret {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+      .story {
+        padding: 34px;
+      }
+      .story p + p {
+        margin-top: 18px;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .feature {
+        padding: 24px;
+        transition:
+          transform 0.25s var(--ease),
+          background 0.25s;
+      }
+      .feature:hover {
+        transform: translateY(-5px);
+        background: var(--panel-2);
+      }
+      .icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 7px;
+        background: rgba(32, 243, 195, 0.12);
+        display: grid;
+        place-items: center;
+        color: var(--accent);
+        margin-bottom: 18px;
+      }
+      .icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .service,
+      .trainer,
+      .price-card,
+      .testimonial,
+      .faq-item,
+      .gallery-item,
+      .schedule-card {
+        transition:
+          transform 0.28s var(--ease),
+          border-color 0.28s,
+          background 0.28s,
+          box-shadow 0.28s;
+      }
+      .service {
+        padding: 24px;
+        min-height: 240px;
+      }
+      .service:hover {
+        transform: translateY(-8px);
+        border-color: rgba(32, 243, 195, 0.45);
+        box-shadow: 0 24px 60px rgba(32, 243, 195, 0.08);
+      }
+      .service p {
+        margin-top: 12px;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+      .price-card {
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+      .price-card.recommended {
+        border-color: rgba(32, 243, 195, 0.7);
+        transform: translateY(-10px);
+      }
+      .badge {
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(32, 243, 195, 0.14);
+        color: var(--accent);
+        font-size: 0.75rem;
+        font-weight: 900;
+      }
+      .price {
+        font-size: 3rem;
+        font-weight: 950;
+        margin: 22px 0 6px;
+      }
+      .price small {
+        font-size: 1rem;
+        color: var(--muted);
+      }
+      .features {
+        list-style: none;
+        padding: 0;
+        margin: 24px 0;
+        display: grid;
+        gap: 11px;
+      }
+      .features li {
+        display: flex;
+        gap: 10px;
+        color: #dfe5ef;
+      }
+      .features li:before {
+        content: "✓";
+        color: var(--accent);
+        font-weight: 950;
+      }
+
+      .trainers-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .trainer {
+        overflow: hidden;
+      }
+      .avatar {
+        height: 280px;
+        background: linear-gradient(145deg, #151a20, #303844 50%, #0b0f13);
+        position: relative;
+      }
+      .avatar:after {
+        content: "";
+        position: absolute;
+        inset: 18% 23% 0;
+        border-radius: 999px 999px 0 0;
+        background: linear-gradient(
+          160deg,
+          rgba(255, 255, 255, 0.7),
+          rgba(32, 243, 195, 0.24) 38%,
+          rgba(0, 0, 0, 0.12)
+        );
+        clip-path: polygon(18% 24%, 50% 0, 82% 24%, 92% 100%, 8% 100%);
+      }
+      .trainer-body {
+        padding: 22px;
+      }
+      .socials {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .socials a {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+      }
+      .trainer:hover {
+        transform: translateY(-7px);
+      }
+
+      .transform-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        align-items: center;
+      }
+      .before-after {
+        height: 460px;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(90deg, #171b20 0 50%, #2a332f 50%);
+      }
+      .before-after:before {
+        content: "BEFORE";
+        position: absolute;
+        left: 28px;
+        top: 28px;
+        color: #fff;
+        font-weight: 950;
+        opacity: 0.8;
+      }
+      .before-after:after {
+        content: "AFTER";
+        position: absolute;
+        right: 28px;
+        top: 28px;
+        color: var(--accent);
+        font-weight: 950;
+      }
+      .split-line {
+        position: absolute;
+        inset: 0 auto 0 50%;
+        width: 2px;
+        background: var(--accent);
+        box-shadow: 0 0 30px var(--accent);
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .metric {
+        padding: 18px;
+        text-align: center;
+      }
+      .metric strong {
+        font-size: 2rem;
+        color: var(--accent);
+      }
+
+      .schedule-controls,
+      .gallery-controls {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+      }
+      .chip {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.055);
+        color: #d8dde8;
+        border-radius: 999px;
+        padding: 9px 14px;
+        cursor: pointer;
+        font-weight: 800;
+      }
+      .chip.active,
+      .chip:hover {
+        background: rgba(32, 243, 195, 0.14);
+        border-color: rgba(32, 243, 195, 0.55);
+        color: #fff;
+      }
+      .schedule-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .schedule-card {
+        padding: 22px;
+      }
+      .schedule-card:hover {
+        transform: translateY(-5px);
+      }
+      .schedule-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        color: var(--accent);
+        font-weight: 850;
+        margin-bottom: 12px;
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      .calc {
+        padding: 30px;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        color: #dce2ea;
+        font-weight: 800;
+        font-size: 0.92rem;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        padding: 13px 14px;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 4px rgba(32, 243, 195, 0.1);
+      }
+      .result {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 7px;
+        background: rgba(32, 243, 195, 0.1);
+        border: 1px solid rgba(32, 243, 195, 0.28);
+        min-height: 66px;
+      }
+
+      .testimonial-wrap {
+        overflow: hidden;
+      }
+      .testimonial-track {
+        display: flex;
+        transition: transform 0.55s var(--ease);
+      }
+      .testimonial {
+        flex: 0 0 100%;
+        padding: 34px;
+      }
+      .stars {
+        color: var(--gold);
+        font-size: 1.1rem;
+        margin-bottom: 14px;
+      }
+      .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 0;
+        background: rgba(255, 255, 255, 0.24);
+        cursor: pointer;
+      }
+      .dot.active {
+        background: var(--accent);
+      }
+
+      .masonry {
+        columns: 3 250px;
+        column-gap: 16px;
+      }
+      .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 16px;
+        height: 220px;
+        border: 0;
+        cursor: pointer;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        padding: 0;
+      }
+      .gallery-item.tall {
+        height: 330px;
+      }
+      .gallery-art {
+        height: 100%;
+        background: linear-gradient(135deg, var(--c1), var(--c2));
+        position: relative;
+      }
+      .gallery-art:after {
+        content: attr(data-title);
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        font-weight: 950;
+        color: #fff;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      }
+      .gallery-item:hover {
+        transform: scale(0.985);
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.82);
+        display: none;
+        place-items: center;
+        padding: 24px;
+      }
+      .lightbox.open {
+        display: grid;
+      }
+      .lightbox-content {
+        width: min(900px, 100%);
+        height: min(620px, 80vh);
+        position: relative;
+      }
+      .lightbox-art {
+        height: 100%;
+        border-radius: 8px;
+        background: linear-gradient(135deg, var(--c1), var(--c2));
+        border: 1px solid var(--line);
+      }
+      .close-lightbox {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 12px;
+      }
+      .faq-item {
+        overflow: hidden;
+      }
+      .faq-q {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        padding: 20px 22px;
+        background: transparent;
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+        text-align: left;
+        font-weight: 900;
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s var(--ease);
+      }
+      .faq-a p {
+        padding: 0 22px 20px;
+      }
+      .faq-item.open .faq-a {
+        max-height: 160px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.85fr;
+        gap: 22px;
+      }
+      .contact-form,
+      .contact-info {
+        padding: 30px;
+      }
+      .map {
+        height: 260px;
+        margin-top: 18px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #111820, #222d34);
+        position: relative;
+        overflow: hidden;
+      }
+      .map:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          repeating-linear-gradient(
+            0deg,
+            transparent 0 38px,
+            rgba(255, 255, 255, 0.05) 39px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            transparent 0 38px,
+            rgba(255, 255, 255, 0.05) 39px
+          );
+      }
+      .map:after {
+        content: "TITAN FITNESS";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--accent);
+        font-weight: 950;
+      }
+
+      footer {
+        padding: 60px 20px 28px;
+        background: #030405;
+        border-top: 1px solid var(--line);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr repeat(3, 1fr);
+        gap: 28px;
+      }
+      .footer-links {
+        display: grid;
+        gap: 9px;
+      }
+      .newsletter {
+        display: flex;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .newsletter input {
+        min-width: 0;
+      }
+      .footer-bottom {
+        border-top: 1px solid var(--line);
+        margin-top: 34px;
+        padding-top: 22px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .back-top {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 900;
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .back-top.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .error {
+        color: #ff8aa9;
+        font-size: 0.86rem;
+        margin-top: 6px;
+      }
+      .success {
+        color: var(--accent);
+        font-weight: 850;
+        margin-top: 12px;
+      }
+
+      @media (max-width: 980px) {
+        .section-head,
+        .about-grid,
+        .transform-grid,
+        .tools-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+        .services-grid,
+        .trainers-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .pricing-grid,
+        .schedule-grid {
+          grid-template-columns: 1fr;
+        }
+        .price-card.recommended {
+          transform: none;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .nav-links {
+          position: fixed;
+          inset: var(--nav-h) 14px auto 14px;
+          display: grid;
+          background: rgba(5, 6, 8, 0.96);
+          border: 1px solid var(--line);
+          border-radius: 8px;
+          padding: 14px;
+          transform: translateY(-14px);
+          opacity: 0;
+          pointer-events: none;
+          backdrop-filter: blur(18px);
+          box-shadow: var(--shadow);
+        }
+        .nav-links.open {
+          opacity: 1;
+          pointer-events: auto;
+          transform: none;
+        }
+        .nav-links a {
+          padding: 14px;
+        }
+        .hamburger {
+          display: block;
+        }
+      }
+      @media (max-width: 640px) {
+        section {
+          padding: 82px 16px;
+        }
+        .nav-inner {
+          width: calc(100% - 28px);
+        }
+        .hero {
+          padding-top: calc(var(--nav-h) + 48px);
+        }
+        .hero-stats,
+        .feature-grid,
+        .services-grid,
+        .trainers-grid,
+        .metrics,
+        .form-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-actions,
+        .newsletter,
+        .footer-bottom {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .btn {
+          width: 100%;
+        }
+        .avatar {
+          height: 230px;
+        }
+        .before-after {
+          height: 340px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader" aria-hidden="true">
+      <div class="loader-mark">TF</div>
+    </div>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="#home" class="brand" aria-label="TITAN FITNESS home"
+          ><span class="brand-mark">T</span><span>TITAN FITNESS</span></a
+        >
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a><a href="#about">About</a
+          ><a href="#services">Services</a><a href="#pricing">Pricing</a
+          ><a href="#trainers">Trainers</a><a href="#schedule">Schedule</a
+          ><a href="#contact">Contact</a>
+        </div>
+        <button
+          class="hamburger"
+          id="menuBtn"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-orbit" aria-hidden="true"></div>
+        <div class="container hero-content reveal">
+          <span class="eyebrow">Premium performance club</span>
+          <h1>
+            <span class="gradient-text typing" id="heroText"
+              >Transform Your Body.</span
+            ><br />Elevate Your Mind.
+          </h1>
+          <p>
+            TITAN FITNESS pairs elite coaching, precision programming, and a
+            cinematic training environment for people who expect more from every
+            session.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#pricing">Start Membership</a>
+            <a class="btn dark" href="#schedule">View Classes</a>
+          </div>
+          <div
+            class="hero-stats"
+            aria-label="TITAN FITNESS performance statistics"
+          >
+            <div class="stat glass">
+              <strong data-count="3400">0</strong><span>Active Members</span>
+            </div>
+            <div class="stat glass">
+              <strong data-count="42">0</strong><span>Elite Trainers</span>
+            </div>
+            <div class="stat glass">
+              <strong data-count="12800">0</strong><span>Transformations</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">About titan</span>
+              <h2>Built for focused bodies and sharper lives.</h2>
+            </div>
+            <p>
+              Our club blends science-backed training, recovery intelligence,
+              and premium hospitality into one disciplined fitness experience.
+            </p>
+          </div>
+          <div class="about-grid">
+            <article class="story glass reveal">
+              <h3>Our Story</h3>
+              <p>
+                Founded for high-performing professionals and serious athletes,
+                TITAN FITNESS rejects generic workouts. Every membership is
+                anchored in measurement, expert coaching, and momentum that
+                lasts.
+              </p>
+              <p>
+                Our mission is simple: create a training environment where
+                strength, endurance, mobility, and mental resilience compound
+                together.
+              </p>
+            </article>
+            <div class="feature-grid">
+              <article class="feature glass reveal">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 12h16M7 8v8M17 8v8" />
+                  </svg>
+                </div>
+                <h3>Precision Coaching</h3>
+                <p>
+                  Programs tailored to your goals, schedule, movement quality,
+                  and recovery profile.
+                </p>
+              </article>
+              <article class="feature glass reveal">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="m4 16 5-5 4 4 7-8" />
+                    <path d="M14 7h6v6" />
+                  </svg>
+                </div>
+                <h3>Measurable Progress</h3>
+                <p>
+                  Track strength, conditioning, body composition, and habits
+                  with clear benchmarks.
+                </p>
+              </article>
+              <article class="feature glass reveal">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 3v18M5 8h14M7 16h10" />
+                  </svg>
+                </div>
+                <h3>Recovery Systems</h3>
+                <p>
+                  Mobility, stretching, breathwork, and low-impact sessions keep
+                  you training longer.
+                </p>
+              </article>
+              <article class="feature glass reveal">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 2 4 7v10l8 5 8-5V7Z" />
+                    <path d="m9 12 2 2 4-5" />
+                  </svg>
+                </div>
+                <h3>Premium Standard</h3>
+                <p>
+                  Spotless spaces, attentive support, and equipment selected for
+                  serious work.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Services</span>
+              <h2>Everything you need to train without compromise.</h2>
+            </div>
+            <p>
+              Choose focused coaching, high-output classes, nutrition strategy,
+              or a complete transformation plan.
+            </p>
+          </div>
+          <div class="services-grid" id="servicesGrid"></div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Membership</span>
+              <h2>Premium plans for every ambition level.</h2>
+            </div>
+            <p>
+              Transparent tiers, flexible upgrades, and expert support from your
+              first assessment.
+            </p>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card glass reveal">
+              <h3>Basic</h3>
+              <p>For consistent independent training.</p>
+              <div class="price">$89<small>/mo</small></div>
+              <ul class="features">
+                <li>Gym floor access</li>
+                <li>2 group classes monthly</li>
+                <li>Progress dashboard</li>
+                <li>Locker access</li>
+              </ul>
+              <a href="#contact" class="btn">Choose Basic</a>
+            </article>
+            <article class="price-card glass recommended reveal">
+              <span class="badge">Recommended</span>
+              <h3>Pro</h3>
+              <p>For coached strength and body composition.</p>
+              <div class="price">$169<small>/mo</small></div>
+              <ul class="features">
+                <li>Unlimited gym access</li>
+                <li>8 group classes monthly</li>
+                <li>Monthly trainer session</li>
+                <li>Nutrition blueprint</li>
+                <li>Recovery zone access</li>
+              </ul>
+              <a href="#contact" class="btn primary">Choose Pro</a>
+            </article>
+            <article class="price-card glass reveal">
+              <h3>Elite</h3>
+              <p>For complete performance transformation.</p>
+              <div class="price">$299<small>/mo</small></div>
+              <ul class="features">
+                <li>Unlimited classes</li>
+                <li>Weekly personal training</li>
+                <li>Advanced body scans</li>
+                <li>Custom nutrition coaching</li>
+                <li>Priority scheduling</li>
+              </ul>
+              <a href="#contact" class="btn">Choose Elite</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="trainers">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Coaches</span>
+              <h2>Elite specialists with real-world results.</h2>
+            </div>
+            <p>
+              Our trainers combine competitive experience with careful
+              programming and high-touch accountability.
+            </p>
+          </div>
+          <div class="trainers-grid" id="trainersGrid"></div>
+        </div>
+      </section>
+
+      <section id="transformations">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Transformations</span>
+              <h2>Visible outcomes. Durable habits.</h2>
+            </div>
+            <p>
+              Members build strength, confidence, and sharper routines through
+              measured training cycles.
+            </p>
+          </div>
+          <div class="transform-grid">
+            <div
+              class="before-after glass reveal"
+              aria-label="Before and after transformation showcase"
+            >
+              <span class="split-line"></span>
+            </div>
+            <div class="reveal">
+              <div class="testimonial glass" id="storyBox">
+                <div class="stars">★★★★★</div>
+                <h3>
+                  “I dropped 24 pounds and added 70 pounds to my deadlift.”
+                </h3>
+                <p>
+                  Six months of Pro coaching gave me a system I could sustain
+                  with a demanding work schedule.
+                </p>
+              </div>
+              <div class="metrics">
+                <div class="metric glass">
+                  <strong data-count="24">0</strong>
+                  <p>Avg lbs lost</p>
+                </div>
+                <div class="metric glass">
+                  <strong data-count="38">0</strong>
+                  <p>Strength gain %</p>
+                </div>
+                <div class="metric glass">
+                  <strong data-count="92">0</strong>
+                  <p>Retention %</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Weekly Schedule</span>
+              <h2>Book the right session for your week.</h2>
+            </div>
+            <p>
+              Filter classes by training style and jump into a program that
+              matches your current goal.
+            </p>
+          </div>
+          <div class="schedule-controls" id="scheduleFilters"></div>
+          <div class="schedule-grid" id="scheduleGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="calculators">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Smart Tools</span>
+              <h2>Estimate your baseline before the first rep.</h2>
+            </div>
+            <p>
+              Use quick calculators for BMI and goal-based daily calories. Your
+              coach can refine them after assessment.
+            </p>
+          </div>
+          <div class="tools-grid">
+            <form class="calc glass reveal" id="bmiForm" novalidate>
+              <h3>BMI Calculator</h3>
+              <div class="form-grid">
+                <label
+                  >Height (cm)<input
+                    id="bmiHeight"
+                    type="number"
+                    min="80"
+                    max="250"
+                    required
+                /></label>
+                <label
+                  >Weight (kg)<input
+                    id="bmiWeight"
+                    type="number"
+                    min="25"
+                    max="300"
+                    required
+                /></label>
+              </div>
+              <button
+                class="btn primary"
+                type="submit"
+                style="margin-top: 16px"
+              >
+                Calculate BMI
+              </button>
+              <div class="result" id="bmiResult">
+                Enter your details to see your BMI category.
+              </div>
+            </form>
+            <form class="calc glass reveal" id="calForm" novalidate>
+              <h3>Calorie Calculator</h3>
+              <div class="form-grid">
+                <label
+                  >Age<input id="age" type="number" min="14" max="90" required
+                /></label>
+                <label
+                  >Weight (kg)<input
+                    id="calWeight"
+                    type="number"
+                    min="25"
+                    max="300"
+                    required
+                /></label>
+                <label
+                  >Height (cm)<input
+                    id="calHeight"
+                    type="number"
+                    min="80"
+                    max="250"
+                    required
+                /></label>
+                <label
+                  >Activity<select id="activity">
+                    <option value="1.2">Desk-based</option>
+                    <option value="1.375">Light training</option>
+                    <option value="1.55">Moderate training</option>
+                    <option value="1.725">Athlete level</option>
+                  </select></label
+                >
+                <label
+                  >Goal<select id="goal">
+                    <option value="-400">Fat loss</option>
+                    <option value="0">Maintain</option>
+                    <option value="300">Lean muscle</option>
+                  </select></label
+                >
+                <label
+                  >Sex<select id="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select></label
+                >
+              </div>
+              <button
+                class="btn primary"
+                type="submit"
+                style="margin-top: 16px"
+              >
+                Estimate Calories
+              </button>
+              <div class="result" id="calResult">
+                Enter your details to estimate daily calories.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Reviews</span>
+              <h2>Trusted by people who take performance seriously.</h2>
+            </div>
+            <p>
+              Real feedback from members balancing ambitious bodies with
+              ambitious lives.
+            </p>
+          </div>
+          <div class="testimonial-wrap glass reveal">
+            <div class="testimonial-track" id="testimonialTrack"></div>
+          </div>
+          <div
+            class="slider-dots"
+            id="testimonialDots"
+            aria-label="Testimonial slide controls"
+          ></div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Gallery</span>
+              <h2>Inside the TITAN training environment.</h2>
+            </div>
+            <p>
+              Explore strength zones, recovery spaces, group energy, and private
+              coaching suites.
+            </p>
+          </div>
+          <div class="gallery-controls" id="galleryFilters"></div>
+          <div class="masonry" id="galleryGrid"></div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">FAQ</span>
+              <h2>Answers before your first visit.</h2>
+            </div>
+            <p>
+              Membership, training, and facility details for a smoother start.
+            </p>
+          </div>
+          <div class="faq-list" id="faqList"></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Contact</span>
+              <h2>Ready for your assessment?</h2>
+            </div>
+            <p>
+              Tell us your goal and our team will match you with the right plan,
+              coach, and next step.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <form class="contact-form glass reveal" id="contactForm" novalidate>
+              <div class="form-grid">
+                <label
+                  >Name<input
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    required
+                /></label>
+                <label
+                  >Email<input
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                /></label>
+                <label
+                  >Phone<input
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    required
+                /></label>
+                <label
+                  >Goal<select name="goal">
+                    <option>Build strength</option>
+                    <option>Lose weight</option>
+                    <option>Improve conditioning</option>
+                    <option>Personal training</option>
+                  </select></label
+                >
+              </div>
+              <label style="margin-top: 14px"
+                >Message<textarea name="message" required></textarea>
+              </label>
+              <button
+                class="btn primary"
+                type="submit"
+                style="margin-top: 16px"
+              >
+                Request Consultation
+              </button>
+              <div id="contactStatus" aria-live="polite"></div>
+            </form>
+            <aside class="contact-info glass reveal">
+              <h3>TITAN FITNESS HQ</h3>
+              <p>88 Summit Avenue, Metro District<br />Open Monday to Sunday</p>
+              <ul class="features">
+                <li>Mon-Fri: 5:00 AM - 11:00 PM</li>
+                <li>Sat-Sun: 6:00 AM - 9:00 PM</li>
+                <li>Phone: (555) 018-8842</li>
+                <li>Email: concierge@titanfitness.com</li>
+              </ul>
+              <div
+                class="map"
+                role="img"
+                aria-label="Map placeholder showing TITAN FITNESS location"
+              ></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="#home" class="brand"
+              ><span class="brand-mark">T</span><span>TITAN FITNESS</span></a
+            >
+            <p style="margin-top: 14px">
+              Transform Your Body. Elevate Your Mind.
+            </p>
+            <form class="newsletter" id="newsletterForm" novalidate>
+              <input
+                type="email"
+                aria-label="Email for newsletter"
+                placeholder="Email for training insights"
+                required
+              />
+              <button class="btn primary" type="submit">Join</button>
+            </form>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <nav class="footer-links" aria-label="Footer explore links">
+              <a href="#services">Services</a><a href="#pricing">Pricing</a
+              ><a href="#schedule">Schedule</a><a href="#gallery">Gallery</a>
+            </nav>
+          </div>
+          <div>
+            <h3>Company</h3>
+            <nav class="footer-links" aria-label="Footer company links">
+              <a href="#about">About</a><a href="#trainers">Trainers</a
+              ><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+            </nav>
+          </div>
+          <div>
+            <h3>Social</h3>
+            <nav class="footer-links" aria-label="Social media links">
+              <a href="#">Instagram</a><a href="#">YouTube</a
+              ><a href="#">LinkedIn</a><a href="#">TikTok</a>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 TITAN FITNESS. All rights reserved.</span
+          ><span>Privacy Policy · Terms · Accessibility</span>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Gallery preview"
+    >
+      <div class="lightbox-content">
+        <button
+          class="btn close-lightbox"
+          id="closeLightbox"
+          aria-label="Close gallery preview"
+        >
+          Close
+        </button>
+        <div class="lightbox-art" id="lightboxArt"></div>
+      </div>
+    </div>
+    <button class="btn back-top" id="backTop" aria-label="Back to top">
+      ↑
+    </button>
+
+    <script>
+      "use strict";
+      const $ = (selector, scope = document) => scope.querySelector(selector);
+      const $$ = (selector, scope = document) => [
+        ...scope.querySelectorAll(selector),
+      ];
+      const data = {
+        services: [
+          [
+            "Personal Training",
+            "One-on-one coaching built around assessment, accountability, and measurable progression.",
+            "M4 19V5l8-3 8 3v14l-8 3-8-3Z",
+          ],
+          [
+            "Strength Training",
+            "Structured barbell, dumbbell, and machine programs for powerful, resilient movement.",
+            "M4 12h16M7 8v8M17 8v8",
+          ],
+          [
+            "Weight Loss Coaching",
+            "Habit systems, conditioning, and nutrition strategy for sustainable fat loss.",
+            "M12 3v18M6 9l6-6 6 6",
+          ],
+          [
+            "Nutrition Planning",
+            "Macro targets, meal frameworks, and practical guidance for demanding lifestyles.",
+            "M6 3h12M8 3v8a4 4 0 0 0 8 0V3M12 15v6",
+          ],
+          [
+            "CrossFit",
+            "High-skill functional training with expert scaling and performance tracking.",
+            "m4 17 6-6 4 4 6-8",
+          ],
+          [
+            "Group Classes",
+            "High-energy small-group sessions with premium coaching and smart programming.",
+            "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0 .1M23 21v-2a4 4 0 0 0-3-3.87",
+          ],
+          [
+            "HIIT Training",
+            "Time-efficient conditioning sessions that build capacity without wasted volume.",
+            "M13 2 3 14h8l-1 8 11-14h-8l1-6Z",
+          ],
+          [
+            "Recovery & Stretching",
+            "Mobility, tissue quality, and breathing work to keep your training engine healthy.",
+            "M20 12a8 8 0 1 1-8-8M12 4v8l5 3",
+          ],
+        ],
+        trainers: [
+          [
+            "Maya Chen",
+            "Strength & Hypertrophy",
+            "10 years coaching executives and physique athletes",
+          ],
+          [
+            "Dante Brooks",
+            "HIIT & Conditioning",
+            "Former sprinter specializing in metabolic performance",
+          ],
+          [
+            "Elena Rossi",
+            "Nutrition & Weight Loss",
+            "Precision habit coaching and body recomposition",
+          ],
+          [
+            "Ari Malik",
+            "Mobility & Recovery",
+            "Movement quality, injury prevention, and longevity",
+          ],
+        ],
+        schedule: [
+          ["Mon", "6:00 AM", "HIIT Engine", "hiit"],
+          ["Mon", "7:30 PM", "Strength Lab", "strength"],
+          ["Tue", "6:30 AM", "Mobility Reset", "recovery"],
+          ["Tue", "6:00 PM", "CrossFit Performance", "crossfit"],
+          ["Wed", "7:00 AM", "Upper Body Power", "strength"],
+          ["Thu", "12:30 PM", "Lunch HIIT", "hiit"],
+          ["Fri", "6:00 PM", "Olympic Lift Skills", "strength"],
+          ["Sat", "9:00 AM", "Group Sweat", "group"],
+          ["Sun", "10:00 AM", "Recovery Flow", "recovery"],
+        ],
+        testimonials: [
+          [
+            "★★★★★",
+            "TITAN feels like a private club with the programming discipline of a pro team. I finally train consistently.",
+            "Jordan P., Founder",
+          ],
+          [
+            "★★★★★",
+            "My coach rebuilt my routine around travel, sleep, and nutrition. The results were obvious in eight weeks.",
+            "Sofia R., Consultant",
+          ],
+          [
+            "★★★★★",
+            "The strength classes are technical, intense, and incredibly well run. Best gym experience I have had.",
+            "Marcus T., Cyclist",
+          ],
+        ],
+        gallery: [
+          ["Strength Floor", "facility", "#14181f", "#20f3c3", false],
+          ["Private Coaching", "coaching", "#1d2229", "#d7b46a", true],
+          ["Recovery Lounge", "recovery", "#101419", "#496dff", false],
+          ["HIIT Studio", "classes", "#23111a", "#ff3f81", true],
+          ["Performance Turf", "facility", "#131c18", "#a7ff3f", false],
+          ["Nutrition Bar", "recovery", "#1a1510", "#d7b46a", false],
+          ["Group Energy", "classes", "#121722", "#20f3c3", true],
+          ["Assessment Suite", "coaching", "#171b20", "#ffffff", false],
+        ],
+        faq: [
+          [
+            "Do I need experience to join?",
+            "No. Every new member starts with an assessment so your plan matches your current ability and goals.",
+          ],
+          [
+            "Are personal training sessions included?",
+            "Pro includes a monthly session, while Elite includes weekly coaching. Additional sessions can be added anytime.",
+          ],
+          [
+            "Can I pause my membership?",
+            "Yes. Members can pause once per quarter for travel, medical needs, or schedule conflicts.",
+          ],
+          [
+            "Do you offer nutrition coaching?",
+            "Yes. Nutrition planning is included in Pro and Elite tiers, with deeper coaching available by request.",
+          ],
+        ],
+      };
+      const icon = (path) =>
+        `<div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="${path}"/></svg></div>`;
+      function initContent() {
+        $("#servicesGrid").innerHTML = data.services
+          .map(
+            (s) =>
+              `<article class="service glass reveal">${icon(s[2])}<h3>${s[0]}</h3><p>${s[1]}</p></article>`,
+          )
+          .join("");
+        $("#trainersGrid").innerHTML = data.trainers
+          .map(
+            (t) =>
+              `<article class="trainer glass reveal"><div class="avatar" aria-hidden="true"></div><div class="trainer-body"><h3>${t[0]}</h3><p><strong>${t[1]}</strong></p><p>${t[2]}</p><div class="socials"><a aria-label="${t[0]} Instagram" href="#">◎</a><a aria-label="${t[0]} LinkedIn" href="#">in</a><a aria-label="${t[0]} profile" href="#">+</a></div></div></article>`,
+          )
+          .join("");
+        $("#testimonialTrack").innerHTML = data.testimonials
+          .map(
+            (t) =>
+              `<article class="testimonial"><div class="stars">${t[0]}</div><h3>“${t[1]}”</h3><p style="margin-top:16px">${t[2]}</p></article>`,
+          )
+          .join("");
+        $("#testimonialDots").innerHTML = data.testimonials
+          .map(
+            (_, i) =>
+              `<button class="dot" aria-label="Show testimonial ${i + 1}" data-slide="${i}"></button>`,
+          )
+          .join("");
+        $("#faqList").innerHTML = data.faq
+          .map(
+            (f, i) =>
+              `<article class="faq-item glass reveal"><button class="faq-q" aria-expanded="false" aria-controls="faq-${i}"><span>${f[0]}</span><span>+</span></button><div class="faq-a" id="faq-${i}"><p>${f[1]}</p></div></article>`,
+          )
+          .join("");
+        renderSchedule("all");
+        renderGallery("all");
+        renderFilterButtons();
+      }
+      function renderFilterButtons() {
+        const classFilters = [
+          ["all", "All"],
+          ["strength", "Strength"],
+          ["hiit", "HIIT"],
+          ["crossfit", "CrossFit"],
+          ["group", "Group"],
+          ["recovery", "Recovery"],
+        ];
+        $("#scheduleFilters").innerHTML = classFilters
+          .map(
+            (f, i) =>
+              `<button class="chip ${i === 0 ? "active" : ""}" data-filter="${f[0]}">${f[1]}</button>`,
+          )
+          .join("");
+        const galleryFilters = [
+          ["all", "All"],
+          ["facility", "Facility"],
+          ["coaching", "Coaching"],
+          ["classes", "Classes"],
+          ["recovery", "Recovery"],
+        ];
+        $("#galleryFilters").innerHTML = galleryFilters
+          .map(
+            (f, i) =>
+              `<button class="chip ${i === 0 ? "active" : ""}" data-gallery="${f[0]}">${f[1]}</button>`,
+          )
+          .join("");
+      }
+      function renderSchedule(filter) {
+        const items = data.schedule.filter(
+          (s) => filter === "all" || s[3] === filter,
+        );
+        $("#scheduleGrid").innerHTML = items
+          .map(
+            (s) =>
+              `<article class="schedule-card glass reveal visible"><div class="schedule-meta"><span>${s[0]}</span><span>${s[1]}</span></div><h3>${s[2]}</h3><p>${s[3].toUpperCase()} training session with coach-led warmup and progression options.</p></article>`,
+          )
+          .join("");
+      }
+      function renderGallery(filter) {
+        const items = data.gallery.filter(
+          (g) => filter === "all" || g[1] === filter,
+        );
+        $("#galleryGrid").innerHTML = items
+          .map(
+            (g) =>
+              `<button class="gallery-item glass ${g[4] ? "tall" : ""}" data-c1="${g[2]}" data-c2="${g[3]}" aria-label="Open ${g[0]} gallery image"><div class="gallery-art" data-title="${g[0]}" style="--c1:${g[2]};--c2:${g[3]}"></div></button>`,
+          )
+          .join("");
+      }
+      function initReveal() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                if (entry.target.querySelector("[data-count]"))
+                  animateCounters(entry.target);
+              }
+            });
+          },
+          { threshold: 0.16 },
+        );
+        $$(".reveal,.hero-stats,.metrics").forEach((el) =>
+          observer.observe(el),
+        );
+      }
+      const counted = new WeakSet();
+      function animateCounters(scope = document) {
+        $$("[data-count]", scope).forEach((el) => {
+          if (counted.has(el)) return;
+          counted.add(el);
+          const target = Number(el.dataset.count);
+          const duration = 1300;
+          const start = performance.now();
+          const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const value = Math.floor(target * (1 - Math.pow(1 - progress, 3)));
+            el.textContent = value.toLocaleString();
+            if (progress < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        });
+      }
+      function initNav() {
+        const nav = $(".nav"),
+          links = $$(".nav-links a"),
+          menu = $("#navLinks"),
+          btn = $("#menuBtn");
+        const update = () => {
+          nav.classList.toggle("scrolled", scrollY > 20);
+          $("#backTop").classList.toggle("show", scrollY > 650);
+        };
+        addEventListener("scroll", update, { passive: true });
+        update();
+        btn.addEventListener("click", () => {
+          const open = menu.classList.toggle("open");
+          document.body.classList.toggle("menu-open", open);
+          btn.setAttribute("aria-expanded", open);
+          btn.setAttribute(
+            "aria-label",
+            open ? "Close navigation menu" : "Open navigation menu",
+          );
+        });
+        links.forEach((a) =>
+          a.addEventListener("click", () => {
+            menu.classList.remove("open");
+            document.body.classList.remove("menu-open");
+            btn.setAttribute("aria-expanded", "false");
+          }),
+        );
+        const sections = links
+          .map((a) => $(a.getAttribute("href")))
+          .filter(Boolean);
+        const activeObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                links.forEach((link) =>
+                  link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + entry.target.id,
+                  ),
+                );
+              }
+            });
+          },
+          { rootMargin: "-42% 0px -52% 0px" },
+        );
+        sections.forEach((section) => activeObserver.observe(section));
+      }
+      function initInteractions() {
+        $("#scheduleFilters").addEventListener("click", (e) => {
+          const btn = e.target.closest("[data-filter]");
+          if (!btn) return;
+          $$("#scheduleFilters .chip").forEach((b) =>
+            b.classList.remove("active"),
+          );
+          btn.classList.add("active");
+          renderSchedule(btn.dataset.filter);
+        });
+        $("#galleryFilters").addEventListener("click", (e) => {
+          const btn = e.target.closest("[data-gallery]");
+          if (!btn) return;
+          $$("#galleryFilters .chip").forEach((b) =>
+            b.classList.remove("active"),
+          );
+          btn.classList.add("active");
+          renderGallery(btn.dataset.gallery);
+        });
+        $("#galleryGrid").addEventListener("click", (e) => {
+          const item = e.target.closest(".gallery-item");
+          if (!item) return;
+          $("#lightboxArt").style.setProperty("--c1", item.dataset.c1);
+          $("#lightboxArt").style.setProperty("--c2", item.dataset.c2);
+          $("#lightbox").classList.add("open");
+          $("#closeLightbox").focus();
+        });
+        $("#closeLightbox").addEventListener("click", closeLightbox);
+        $("#lightbox").addEventListener("click", (e) => {
+          if (e.target.id === "lightbox") closeLightbox();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeLightbox();
+        });
+        $("#faqList").addEventListener("click", (e) => {
+          const q = e.target.closest(".faq-q");
+          if (!q) return;
+          const item = q.closest(".faq-item");
+          const open = item.classList.toggle("open");
+          q.setAttribute("aria-expanded", open);
+          q.lastElementChild.textContent = open ? "−" : "+";
+        });
+        $("#backTop").addEventListener("click", () =>
+          scrollTo({ top: 0, behavior: "smooth" }),
+        );
+      }
+      function closeLightbox() {
+        $("#lightbox").classList.remove("open");
+      }
+      function initCalculators() {
+        $("#bmiForm").addEventListener("submit", (e) => {
+          e.preventDefault();
+          const h = Number($("#bmiHeight").value),
+            w = Number($("#bmiWeight").value),
+            out = $("#bmiResult");
+          if (h < 80 || h > 250 || w < 25 || w > 300) {
+            out.innerHTML = `<span class="error">Please enter realistic height and weight values.</span>`;
+            return;
+          }
+          const bmi = w / Math.pow(h / 100, 2);
+          const cat =
+            bmi < 18.5
+              ? "Underweight"
+              : bmi < 25
+                ? "Healthy range"
+                : bmi < 30
+                  ? "Overweight"
+                  : "Obesity range";
+          out.innerHTML = `<strong>${bmi.toFixed(1)} BMI</strong><br>${cat}. Use this as a starting signal, not a complete health assessment.`;
+        });
+        $("#calForm").addEventListener("submit", (e) => {
+          e.preventDefault();
+          const age = Number($("#age").value),
+            w = Number($("#calWeight").value),
+            h = Number($("#calHeight").value);
+          if (age < 14 || age > 90 || w < 25 || h < 80) {
+            $("#calResult").innerHTML =
+              `<span class="error">Please enter realistic age, height, and weight values.</span>`;
+            return;
+          }
+          const base =
+            $("#sex").value === "male"
+              ? 10 * w + 6.25 * h - 5 * age + 5
+              : 10 * w + 6.25 * h - 5 * age - 161;
+          const calories = Math.round(
+            base * Number($("#activity").value) + Number($("#goal").value),
+          );
+          $("#calResult").innerHTML =
+            `<strong>${calories.toLocaleString()} calories/day</strong><br>Estimated target based on your selected activity and goal.`;
+        });
+      }
+      function initForms() {
+        const validate = (form) => {
+          let ok = true;
+          $$(".error", form).forEach((e) => e.remove());
+          $$("input,textarea", form).forEach((field) => {
+            if (!field.checkValidity()) {
+              ok = false;
+              field.insertAdjacentHTML(
+                "afterend",
+                `<span class="error">${field.type === "email" ? "Enter a valid email address." : "This field is required."}</span>`,
+              );
+            }
+          });
+          return ok;
+        };
+        $("#contactForm").addEventListener("submit", (e) => {
+          e.preventDefault();
+          const status = $("#contactStatus");
+          if (!validate(e.currentTarget)) {
+            status.innerHTML = "";
+            return;
+          }
+          e.currentTarget.reset();
+          status.innerHTML = `<div class="success">Request received. A TITAN concierge will contact you shortly.</div>`;
+        });
+        $("#newsletterForm").addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (e.currentTarget.checkValidity()) {
+            e.currentTarget.reset();
+            alert("You are subscribed to TITAN training insights.");
+          }
+        });
+      }
+      function initSlider() {
+        let index = 0;
+        const track = $("#testimonialTrack"),
+          dots = $$("#testimonialDots .dot");
+        const show = (i) => {
+          index = (i + data.testimonials.length) % data.testimonials.length;
+          track.style.transform = `translateX(-${index * 100}%)`;
+          dots.forEach((d, di) => d.classList.toggle("active", di === index));
+        };
+        dots.forEach((d) =>
+          d.addEventListener("click", () => show(Number(d.dataset.slide))),
+        );
+        show(0);
+        setInterval(() => show(index + 1), 5200);
+      }
+      function initHeroType() {
+        const phrases = [
+          "Transform Your Body.",
+          "Engineer Your Strength.",
+          "Command Your Energy.",
+        ];
+        const el = $("#heroText");
+        let p = 0,
+          c = phrases[0].length,
+          deleting = true;
+        setInterval(() => {
+          const phrase = phrases[p];
+          c += deleting ? -1 : 1;
+          el.textContent = phrase.slice(0, c);
+          if (c === 0) {
+            deleting = false;
+            p = (p + 1) % phrases.length;
+          }
+          if (c === phrases[p].length) {
+            deleting = true;
+          }
+        }, 95);
+      }
+      function initTilt() {
+        $$(".price-card,.service,.trainer").forEach((card) => {
+          card.addEventListener("pointermove", (e) => {
+            const r = card.getBoundingClientRect();
+            card.style.transform = `translateY(-6px) rotateX(${-(e.clientY - r.top - r.height / 2) / 28}deg) rotateY(${(e.clientX - r.left - r.width / 2) / 28}deg)`;
+          });
+          card.addEventListener(
+            "pointerleave",
+            () => (card.style.transform = ""),
+          );
+        });
+      }
+      window.addEventListener("load", () => {
+        $(".loader").classList.add("hide");
+        initContent();
+        initReveal();
+        initNav();
+        initInteractions();
+        initCalculators();
+        initForms();
+        initSlider();
+
+        animateCounters(document);
+      });
+    </script>
+  </body>
+</html>
+
+7:07 AM
